@@ -1,0 +1,33 @@
+{
+  "preset": "jquery",
+  "indent": {
+    "value": "\t",
+    "TopLevelFunctionBlock": 1
+  },
+  "lineBreak": {
+    "before": {
+      "EndOfFile": 1
+    }
+  },
+  "quotes": {
+    "type": "single",
+    "avoidEscape": false
+  },
+  "whiteSpace": {
+    "before": {
+      "IIFEClosingParentheses": 0
+    },
+    "after": {
+      "IIFEOpeningParentheses": 0
+    }
+  },
+  "plugins": [
+    "esformatter-braces",
+    "esformatter-dot-notation",
+    "esformatter-jquery-chain",
+    "esformatter-quote-props",
+    "esformatter-quotes",
+    "esformatter-remove-trailing-commas",
+    "esformatter-special-bangs"
+  ]
+}

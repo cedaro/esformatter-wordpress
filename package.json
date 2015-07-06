@@ -1,0 +1,47 @@
+{
+  "name": "esformatter-wordpress",
+  "version": "0.1.0",
+  "description": "Format JavaScript code according to WordPress's coding standards.",
+  "license": "MIT",
+  "repository": "cedaro/esformatter-wordpress",
+  "author": {
+    "name": "Brady Vercher",
+    "url": "http://www.cedaro.com/"
+  },
+  "main": "index.js",
+  "bin": {
+    "wpjs": "./bin/wpjs"
+  },
+  "scripts": {
+    "lint": "jshint index.js lib/*.js bin/wpjs test/compare.spec.js",
+    "test": "mocha -R spec test"
+  },
+  "keywords": [
+    "esformatter",
+    "esformatter-plugin",
+    "wordpress",
+    "coding standards",
+    "javascript",
+    "beautifier",
+    "formatter",
+    "syntax"
+  ],
+  "dependencies": {
+    "esformatter": "^0.7.1",
+    "esformatter-braces": "^1.2.1",
+    "esformatter-jquery-chain": "^1.1.0",
+    "esformatter-quote-props": "^1.0.1",
+    "esformatter-quotes": "^1.0.2",
+    "esformatter-remove-trailing-commas": "^1.0.1",
+    "esformatter-special-bangs": "^1.0.1",
+    "minimist": "^1.1.1",
+    "mout": "^0.11.0",
+    "rocambole-token": "^1.2.1",
+    "rocambole-whitespace": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5"
+  }
+}
