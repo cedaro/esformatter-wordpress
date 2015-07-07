@@ -29,6 +29,7 @@
   "dependencies": {
     "esformatter": "^0.7.1",
     "esformatter-braces": "^1.2.1",
+    "esformatter-dot-notation": "^1.3.1",
     "esformatter-jquery-chain": "^1.1.0",
     "esformatter-quote-props": "^1.0.1",
     "esformatter-quotes": "^1.0.2",
