@@ -15,9 +15,15 @@
   },
   "whiteSpace": {
     "before": {
+      "ArgumentListArrayExpression": 0,
+      "ArgumentListFunctionExpression": 0,
+      "ArgumentListObjectExpression": 0,
       "IIFEClosingParentheses": 0
     },
     "after": {
+      "ArgumentListArrayExpression": 0,
+      "ArgumentListFunctionExpression": 0,
+      "ArgumentListObjectExpression": 0,
       "IIFEOpeningParentheses": 0
     }
   },
