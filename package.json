@@ -9,11 +9,8 @@
     "url": "http://www.cedaro.com/"
   },
   "main": "index.js",
-  "bin": {
-    "wpjs": "./bin/wpjs"
-  },
   "scripts": {
-    "lint": "jshint index.js lib/*.js bin/wpjs test/compare.spec.js",
+    "lint": "jshint index.js lib/*.js test/compare.spec.js",
     "test": "mocha -R spec test"
   },
   "keywords": [
@@ -35,7 +32,6 @@
     "esformatter-quotes": "^1.0.2",
     "esformatter-remove-trailing-commas": "^1.0.1",
     "esformatter-special-bangs": "^1.0.1",
-    "minimist": "^1.1.1",
     "mout": "^0.11.0",
     "rocambole-token": "^1.2.1",
     "rocambole-whitespace": "^1.0.0"

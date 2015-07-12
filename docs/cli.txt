@@ -1,8 +1,0 @@
-Usage: wpjs [options] <input>
-
-Options:
-  -v, --version           Display the current version.
-  -h, --help              Display help and usage details.
-  -i                      Format input files in place; use with care!
-  --diff                  Check code style and output char diff.
-  -u, --diff-unified      Check code style and output unified diff.
