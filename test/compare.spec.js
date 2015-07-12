@@ -4,8 +4,11 @@
 
 var fs = require('fs');
 var path = require('path');
-var esformatter = require('../');
+var esformatter = require('esformatter');
 var expect = require('chai').expect;
+
+var wordpressPreset = require('../');
+esformatter.register(wordpressPreset);
 
 var readFile = function(folder, name) {
   var filePath = path.join('./test', folder, name);

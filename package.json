@@ -1,7 +1,7 @@
 {
   "name": "esformatter-wordpress",
   "version": "0.1.2",
-  "description": "Format JavaScript code according to WordPress's coding standards.",
+  "description": "An esformatter plugin to format JavaScript code according to WordPress' coding standards.",
   "license": "MIT",
   "repository": "cedaro/esformatter-wordpress",
   "author": {

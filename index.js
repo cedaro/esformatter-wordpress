@@ -8,35 +8,50 @@
 
 'use strict';
 
-var esformatter = require('esformatter');
-var preset = require('./esformatter.json');
 var deepMixIn = require('mout/object/deepMixIn');
+var pluginOptions = require('./esformatter.json');
 
-var specialArguments = require('./lib/special-arguments.js');
-esformatter.register(specialArguments);
-
+// Plugin dependencies.
+var braces = require('esformatter-braces');
+var dotNotation = require('esformatter-dot-notation');
 var iifeSpacing = require('./lib/iife-spacing.js');
-esformatter.register(iifeSpacing);
-
+var jqueryChain = require('esformatter-jquery-chain');
 var objectSpacingExceptions = require('./lib/object-spacing-exceptions.js');
-esformatter.register(objectSpacingExceptions);
+var quoteProps = require('esformatter-quote-props');
+var quotes = require('esformatter-quotes');
+var removeTrailingCommas = require('esformatter-remove-trailing-commas');
+var specialArguments = require('./lib/special-arguments.js');
+var specialBangs = require('esformatter-special-bangs');
 
-var format = esformatter.format;
-esformatter.format = function(str, opts) {
-  opts = deepMixIn(preset, opts || {});
-  return format.call(this, str, opts);
+
+exports.setOptions = function(options) {
+  deepMixIn(options, pluginOptions);
+  jqueryChain.setOptions(options);
+  quotes.setOptions(options);
+  specialArguments.setOptions(options);
 };
 
-var diffChars = esformatter.diff.chars;
-esformatter.diff.chars = function() {
-  arguments[1] = deepMixIn(preset, arguments[1]);
-  return diffChars.apply(this, arguments);
+exports.transformBefore = function(ast) {
+  dotNotation.transformBefore(ast);
 };
 
-var diffUnified = esformatter.diff.unified;
-esformatter.diff.unified = function() {
-  arguments[1] = deepMixIn(preset, arguments[1]);
-  return diffUnified.apply(this, arguments);
+exports.tokenBefore = function(token) {
+  quotes.tokenBefore(token);
+  removeTrailingCommas.tokenBefore(token);
 };
 
-module.exports = esformatter;
+exports.nodeBefore = function(node) {
+    braces.nodeBefore(node);
+    quoteProps.nodeBefore(node);
+};
+
+exports.nodeAfter = function(node) {
+  iifeSpacing.nodeAfter(node);
+  objectSpacingExceptions.nodeAfter(node);
+  specialArguments.nodeAfter(node);
+  specialBangs.nodeAfter(node);
+};
+
+exports.transformAfter = function(ast) {
+  jqueryChain.transformAfter(ast);
+};

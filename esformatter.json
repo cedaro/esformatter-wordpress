@@ -1,12 +1,24 @@
 {
-  "preset": "jquery",
+  "preset" : "default",
   "indent": {
     "value": "\t",
+    "IfStatementConditional": 2,
+    "SwitchStatement": 0,
     "TopLevelFunctionBlock": 1
   },
   "lineBreak": {
     "before": {
-      "EndOfFile": 1
+      "EndOfFile": 1,
+      "ObjectExpressionOpeningBrace": -1,
+      "ObjectExpressionClosingBrace": -1,
+      "Property": -1,
+      "VariableDeclarationWithoutInit": 0
+    },
+    "after": {
+      "AssignmentOperator": -1,
+      "ObjectExpressionOpeningBrace": -1,
+      "ObjectExpressionClosingBrace": -1,
+      "Property": -1
     }
   },
   "quotes": {
@@ -15,25 +27,41 @@
   },
   "whiteSpace": {
     "before": {
+      "ArgumentList": 1,
       "ArgumentListArrayExpression": 0,
       "ArgumentListFunctionExpression": 0,
       "ArgumentListObjectExpression": 0,
-      "IIFEClosingParentheses": 0
+      "ArrayExpressionClosing": 1,
+      "CatchParameterList": 1,
+      "ExpressionClosingParentheses": 1,
+      "ForInStatementExpressionClosing": 1,
+      "ForStatementExpressionClosing": 1,
+      "IfStatementConditionalClosing": 1,
+      "IIFEClosingParentheses": 0,
+      "MemberExpressionClosing": 1,
+      "ObjectExpressionClosingBrace": 1,
+      "ParameterList": 1,
+      "SwitchDiscriminantClosing": 1,
+      "WhileStatementConditionalClosing": 1
     },
     "after": {
+      "ArgumentList": 1,
       "ArgumentListArrayExpression": 0,
       "ArgumentListFunctionExpression": 0,
       "ArgumentListObjectExpression": 0,
-      "IIFEOpeningParentheses": 0
+      "ArrayExpressionOpening": 1,
+      "CatchParameterList": 1,
+      "ExpressionOpeningParentheses": 1,
+      "ForInStatementExpressionOpening": 1,
+      "ForStatementExpressionOpening": 1,
+      "IfStatementConditionalOpening": 1,
+      "IIFEOpeningParentheses": 0,
+      "MemberExpressionOpening": 1,
+      "ObjectExpressionOpeningBrace": 1,
+      "ParameterList": 1,
+      "PropertyValue": -1,
+      "SwitchDiscriminantOpening": 1,
+      "WhileStatementConditionalOpening": 1
     }
-  },
-  "plugins": [
-    "esformatter-braces",
-    "esformatter-dot-notation",
-    "esformatter-jquery-chain",
-    "esformatter-quote-props",
-    "esformatter-quotes",
-    "esformatter-remove-trailing-commas",
-    "esformatter-special-bangs"
-  ]
+  }
 }
