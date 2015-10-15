@@ -16,6 +16,7 @@ var braces = require('esformatter-braces');
 var dotNotation = require('esformatter-dot-notation');
 var iifeSpacing = require('./lib/iife-spacing.js');
 var jqueryChain = require('esformatter-jquery-chain');
+var newExpressionArguments = require('./lib/new-expression-arguments.js');
 var objectSpacingExceptions = require('./lib/object-spacing-exceptions.js');
 var quoteProps = require('esformatter-quote-props');
 var quotes = require('esformatter-quotes');
@@ -27,6 +28,7 @@ var specialBangs = require('esformatter-special-bangs');
 exports.setOptions = function(options) {
   deepMixIn(options, pluginOptions);
   jqueryChain.setOptions(options);
+  //newExpressionArguments.setOptions(options);
   quotes.setOptions(options);
   specialArguments.setOptions(options);
 };
@@ -47,6 +49,7 @@ exports.nodeBefore = function(node) {
 
 exports.nodeAfter = function(node) {
   iifeSpacing.nodeAfter(node);
+  newExpressionArguments.nodeAfter(node);
   objectSpacingExceptions.nodeAfter(node);
   specialArguments.nodeAfter(node);
   specialBangs.nodeAfter(node);
