@@ -36,7 +36,6 @@ exports.transformBefore = function(ast) {
 };
 
 exports.tokenBefore = function(token) {
-  quotes.tokenBefore(token);
   removeTrailingCommas.tokenBefore(token);
 };
 
@@ -50,6 +49,10 @@ exports.nodeAfter = function(node) {
   objectSpacingExceptions.nodeAfter(node);
   specialArguments.nodeAfter(node);
   specialBangs.nodeAfter(node);
+};
+
+exports.tokenAfter = function(token) {
+  quotes.tokenAfter(token);
 };
 
 exports.transformAfter = function(ast) {
