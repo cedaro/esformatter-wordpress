@@ -62,6 +62,10 @@ It's also possible to register *esformatter-wordpress* in a project, either in a
 
 ## Changelog
 
+### 0.2.1
+
+* Updated the quotes plugin implementation to fix an error caused by a change in the `esformatter-quotes` plugin. See [#4](https://github.com/cedaro/esformatter-wordpress/issues/4)
+
 ### 0.2.0
 
 * Reworked the package to make it an *esformatter* plugin.
